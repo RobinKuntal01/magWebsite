@@ -1,0 +1,11 @@
+{
+    "articles":
+    [
+        {
+            "id":1,
+            "title":"hee",
+            "author":"robs",
+            "content": "content"
+        }
+    ]
+}

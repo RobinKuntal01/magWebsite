@@ -1,0 +1,9 @@
+.outerContainer{
+    display: flex;
+    height: 70vh;
+    align-items: center;
+    background-color: rgb(79, 79, 79);
+    display: flex;
+    flex-flow: wrap;
+  }
+

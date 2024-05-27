@@ -1,52 +1,85 @@
-<header>
-    <div class="top-container">
-        <div class="top-container-in">
-            <a href="" routerLink="/"><img src="/src/assets/search.svg" height="20px" width="20px"></a>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="">Facebook</a>
-                    </li>
-                    <li>
-                        <a href="">Twitter</a>
-                    </li>
-                    <li>
-                        <a href="">Insta</a>
-                    </li>
-                    <li>
-                        <a href="">LinkdIn</a>
-                    </li>
-    
-                </ul>
-            </nav>
-        </div>
-       
-    </div>
-    <div class="bottom-container">
 
-        <div class="bottom-container-in">
-            <a href="" routerLink="/"><img src="/src/assets/Mirrorworld.webp" alt="img"></a>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="">Home1</a>
-                    </li>
-                    <li>
-                        <a href="">About Us</a>
-                    </li>
-                    <li>
-                        <a href="">Magazine</a>
-                    </li>
-                    <li>
-                        <a href="">Articles</a>
-                    </li>
-                    <li>
-                        <a href="">Contact Us</a>
-                    </li>
-    
-                </ul>
-            </nav>
-        </div>
+<div class="fluid p-0">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-top bg-body-tertiary"  (scroll)="onscroll()" [ngClass]="navbarfixed?'fixed':'nofixed'">
+    <div class="container-fluid ">
+      <a class="navbar-brand" href="#">
+        <img src="assets/logobgR.jpg" alt="logo" width="280rem" height="40rem">
+      </a>
+    <span class="space"></span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleMenu()">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item" (click)="setActive('home')" [class.active]="activeTab === 'home'">
+          <a class="nav-link btn"  [routerLink]="['/']">Home</a>
+        </li>
+        <li class="nav-item" (click)="setActive('articles')" [class.active]="activeTab === 'articles'">
+          <a class="nav-link btn"  [routerLink]="['/articles']">Articles</a>
+        </li>
+        <li class="nav-item" (click)="setActive('magazines')" [class.active]="activeTab === 'magazines'">
+          <a class="nav-link btn"  [routerLink]="['/magazine']">Magazines</a>
+        </li>
+        <!-- <li class="nav-item" (click)="setActive('industry')" [class.active]="activeTab === 'industry'">
+          <a class="nav-link btn"  [routerLink]="['/industry']">Industry</a>
+        </li> -->
+        <li class="nav-item" (click)="setActive('contactus')" [class.active]="activeTab === 'contactus'">
+          <a class="nav-link btn"  [routerLink]="['/contactus']">Contact Us</a>
+        </li>
+        <li class="nav-item" (click)="setActive('aboutus')" [class.active]="activeTab === 'aboutus'">
+          <a class="nav-link btn"  [routerLink]="['/aboutus']">About Us</a>
+        </li>
+        <li class="nav-item" (click)="setActive('login')" [class.active]="activeTab === 'login'" >
+          <a class="nav-link btn"  [routerLink]="['/login']">Login</a>
+        </li>
+        <!-- <li><a *ngIf="isLoggedIn()" routerLink="/addarticles">Add Article</a> -->
+        <!-- </li> -->
+        
+          <!-- Add Magazine menu item -->
+          <li class="nav-item" *ngIf="isLoggedIn()" [class.active]="activeTab === 'admin'" (click)="setActive('admin')">
+            <a class="nav-link btn" routerLink="/dashboard">Admin</a>
+          </li>
+          
+       
+      </ul>
+      
+      <!-- <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-danger" type="submit">Search</button>
+      </form> -->
     </div>
-    
-</header>
+  </div>
+  </nav>
+  
+
+  <div class="fluid p-0">
+    <nav class="navbar navbar-expand-lg navbar-bottom">
+      <div class="container-fluid ">
+        <span class="promo">Get A Chance To Feature In Magazine By Submitting Your Interview Today!</span>
+        <span class="space"></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- Your menu items here -->
+          </ul>
+          <div class="Smedia">
+            <a class="navbar-brand" href="https://www.facebook.com/" target="_blank">
+              <img src="assets/facebook-icon.svg" alt="Bootstrap" width="30" height="27">
+            </a>
+            <a class="navbar-brand" href="https://twitter.com/?lang=en" target="_blank">
+              <img src="assets/twitter-icon.webp" alt="Bootstrap" width="25" height="19">
+            </a>
+            <a class="navbar-brand" href="https://www.instagram.com/" target="_blank">
+              <img src="assets/icons8-instagram.svg" alt="Bootstrap" width="30" height="27">
+            </a>
+            <a class="navbar-brand" href="https://in.linkedin.com/" target="_blank">
+              <img src="assets/icons8-linkedin.svg" alt="Bootstrap" width="30" height="27">
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+  

@@ -1,0 +1,42 @@
+.container {
+  background-color: rgb(176, 173, 173);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Adjust the gap between cards */
+  padding: 20px; /* Adjust the padding around the container */
+}
+
+.widget-card {
+  width: 20rem;
+  transition: transform 0.6s ease, box-shadow 0.6s ease, background-color 0.6s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.widget-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #f0f0f0;
+  scale: 1.02; /* Adds a slight scaling effect */
+}
+
+.card-img-top {
+  height: 20rem;
+  padding: 0.5rem;
+}
+
+.card-body {
+  height: 15rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Adjust the space between buttons */
+}
+
+.center-align {
+  display: block; /* Ensure the link is treated as a block-level element */
+  width: fit-content; /* Make the link's width fit its content */
+  margin: 0 auto; /* Center the link horizontally */
+}

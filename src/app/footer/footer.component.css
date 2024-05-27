@@ -1,0 +1,14 @@
+.navbar-bottom{
+    color: white;
+    background-color: black;
+}
+.image{
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+#quicklinks li:hover{
+    text-decoration: underline;
+}

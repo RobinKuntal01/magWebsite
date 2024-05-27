@@ -1,0 +1,73 @@
+
+/* button{
+    background-color: white;
+    color: black;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    margin: 3rem;
+    height: 5rem;
+} */
+.text-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.text-block {
+  background-color: rgba(0, 0, 0, 0.733);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  max-width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Responsive CSS */
+@media screen and (max-width: 768px) {
+  .text-block {
+    padding: 1rem;
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .text-block {
+    padding: 0.5rem;
+    max-width: 95%;
+  }
+}
+
+button {
+  background-color: white;
+  color: black;
+  padding: 2vw 2vw;
+  margin: 1vw;
+  height: auto;
+  font-size: 1vw;
+  text-align: center; /* Center the text inside the button */
+}
+
+/* Responsive CSS */
+@media screen and (max-width: 768px) {
+  button {
+    padding: 1.5vw 3vw; /* Adjust padding for smaller screens */
+    margin: 2vw; /* Adjust margin for smaller screens */
+    font-size: 1.5vw; /* Adjust font size for smaller screens */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  button {
+    padding: 1vw 2vw; /* Adjust padding for even smaller screens */
+    margin: 1.5vw; /* Adjust margin for even smaller screens */
+    font-size: 1vw; /* Adjust font size for even smaller screens */
+  }
+}
+
+.signout{
+   border-radius: 1rem;
+}

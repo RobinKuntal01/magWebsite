@@ -1,0 +1,52 @@
+<!-- <div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()" enctype="multipart/form-data">
+
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <label for="inputEmail6" class="col-form-label">Email ID : </label>
+            </div>
+            <div class="col-auto">
+                <input type="email" id="email" class="form-control" formControlName="email"  aria-describedby="passwordHelpInline">
+            </div> 
+        </div>
+        
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label">Password</label>
+            </div>
+            <div class="col-auto">
+                <input type="password" id="password" class="form-control" formControlName="password" aria-describedby="passwordHelpInline">
+            </div>
+            <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text">
+                 
+                </span>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Login</button>
+        <span *ngIf="errorMessage" class="alert alert-danger"> {{ errorMessage }}</span>
+        
+    </form> 
+    </div> -->
+    <div class="text-Container" >
+        <img src="assets/background1.webp" alt="Notebook" style="width:100%; height:32rem;">
+        <div class="text-block">
+            <form [formGroup]="loginForm"  (ngSubmit)="onSubmitLogin()" enctype="multipart/form-data">
+                <label style="color: white;" for="inputEmail6">Email address</label>
+                <div class="form-floating mb-3">
+                    <input type="email"reuired class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email">
+                </div>
+    
+                <label style="color: white;" for="inputPassword6">Password</label>
+                <div class="form-floating">
+                    <input type="password" reuired class="form-control" id="floatingPassword" placeholder="Password" formControlName="password">
+                </div><br>
+    
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button type="submit" class="btn btn-light">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    

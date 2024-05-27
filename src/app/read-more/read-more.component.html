@@ -1,0 +1,11 @@
+<div class="article-container" *ngIf="articleByID">
+  <h2 class="article-title"><strong>Title:</strong>{{ articleByID.title }}</h2>
+  <img class="article-image" [src]="articleByID.imageArticle" alt="{{ articleByID.title }}">
+  <div class="article-author"><strong>Author:</strong> {{ articleByID.author }}</div>
+  <div class="article-content"><strong>Content:</strong>{{ articleByID.content }}</div>
+  <div class="article-industry"><strong>Industry:</strong> {{ articleByID.industry }}</div>
+  <div class="article-date"><strong>Posted On:</strong> {{ articleByID.createdAt | date }}</div>
+</div>
+<div *ngIf="!articleByID">
+  <p>Loading article details...</p>
+</div>

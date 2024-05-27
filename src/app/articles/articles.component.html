@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="card widget-card" *ngFor="let a of articles | slice:(page - 1) * 6 : page * 6">
+    <div class="position-relative">
+      <img [src]="a.imageArticle" class="card-img-top" [alt]="a.title">
+      <div class="card-img-overlay d-flex align-items-end justify-content-center"></div>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{a.title }}</h5>
+      <p class="card-text">{{a.content | slice:0:50}}..</p>
+      <div> Posted On:{{a.createdAt | slice:0:10}} </div>
+      <div class="button-container">
+        <button class="btn btn-primary center-align" target="_blank" (click)="readMore(a._id)">Read More</button>
+        <button *ngIf="isAdminLoggedIn" class="btn btn-warning center-align" (click)="deleteArticle(a._id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<mat-paginator [length]="articles.length" [pageSize]="6" aria-label="Select page" (page)="page = $event.pageIndex + 1">
+</mat-paginator>

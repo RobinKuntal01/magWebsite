@@ -1,0 +1,103 @@
+  <div class="color">
+  <div class="text-container">
+    <img src="assets/bg.jpg" alt="Notebook" style="width:100%; height:32rem;">
+    <div class="text-block">
+      <h1>Digital Business Review Magazine</h1>
+      <p>Welcome to Digital Business Review Magazine, your premier source for insightful analysis, in-depth interviews, and cutting-edge trends in the world of digital business.</p>
+    </div>
+  </div>
+  
+  <div class="carouselBg">
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+      <div class="carousel-inner justify-content-center">
+        <div class="carousel-item" *ngFor="let a of articles; let i = index" [class.active]="i === 0">
+          <img src="{{a.imageArticle}}" class="d-block img1 mx-auto " alt="{{a.title}}"> 
+          <div class="carousel-caption d-none ">
+            <h5>"{{a.title}}"</h5>
+          </div>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>{{a.title}}</h5>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- <div class="imgcontainer"> -->
+ 
+<div>
+<div>
+</div>
+<br>
+</div>
+<div class="imgcontainer">
+  <div class="content-and-slider">
+    <div class="left-content">
+      <h1 style="text-align: center;">Latest Articles</h1><br>
+      <div *ngIf="latestArticle">  
+        <h5>"{{latestArticle?.title}}"</h5>
+        <p class="card-text">{{latestArticle?.content | slice:0:100}}..</p>
+      </div>
+    </div>   
+    <div class="right-slider justify-content-center">
+      <div class="widget-content px-0" *ngIf="latestArticle">
+        <div class="chart d-flex justify-content-center fixed-image-size">
+          <img src="{{latestArticle?.imageArticle}}" 
+               alt="{{latestArticle?.title}}"
+               class="zoom-image">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="custom-container">
+  <div class="magazine-content">
+    <div class="text-center border-bottom border-3"><strong><h2>Magazines</h2></strong></div>
+    
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-3 mt-4 mb-5" *ngFor="let a of magazines">
+        <div class="widget-content px-0">
+          <div class="chart d-flex justify-content-center">
+            <div class="image-wrapper">
+              <img src="{{a.coverImage}}" alt="{{a.title}}" class="img-fluid fixed-image-size zoom-image">
+              <div class="read-more-wrapper">
+                <a href="{{a.pdfArticle}}" target="_blank" class="btn read-more-button">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="imgcontainerMag">
+  <div class="content-and-sliderMag">
+    <div class="right-sliderMag justify-content-center">
+      <div class="widget-content px-0" *ngIf="latestArticle">
+        <div class="chart d-flex justify-content-center fixed-image-size">
+          <img src="{{latestMagazine?.coverImage}}" 
+               alt="{{latestMagazine?.title}}"
+               class="zoom-imageMag">
+        </div>
+      </div>
+    </div>
+    <div class="left-contentMag">
+      <h1 style="text-align: center;">Latest Magazines</h1><br>
+      <div *ngIf="latestArticle">  
+        <h5>"{{latestMagazine?.title}}"</h5>
+        <p class="card-text">{{latestMagazine?.content | slice:0:100}}..</p>
+      </div>
+    </div> 
+  </div>
+</div><br>
