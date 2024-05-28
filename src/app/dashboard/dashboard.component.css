@@ -1,73 +1,75 @@
-
-/* button{
-    background-color: white;
-    color: black;
-    padding-left: 5rem;
-    padding-right: 5rem;
-    margin: 3rem;
-    height: 5rem;
-} */
 .text-container {
   position: relative;
   width: 100%;
+  height: 32rem; /* Set a fixed height for the container */
   display: flex;
   justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevent content from overflowing */
+}
+
+.text-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the container */
 }
 
 .text-block {
   background-color: rgba(0, 0, 0, 0.733);
   color: white;
-  padding: 2rem;
+  padding: 2vw;
   text-align: center;
-  max-width: 80%;
+  max-width: 80vw;
+  box-sizing: border-box;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1;
+  border-radius: 10px; /* Optional: Add some border radius for aesthetics */
 }
 
 /* Responsive CSS */
 @media screen and (max-width: 768px) {
   .text-block {
-    padding: 1rem;
-    max-width: 90%;
+      padding: 1rem;
+      max-width: 90%;
   }
 }
 
 @media screen and (max-width: 576px) {
   .text-block {
-    padding: 0.5rem;
-    max-width: 95%;
+      padding: 0.5rem;
+      max-width: 95%;
   }
 }
 
 button {
   background-color: white;
   color: black;
-  padding: 2vw 2vw;
-  margin: 1vw;
+  padding: 1rem 2rem;
+  margin: 1rem; 
   height: auto;
-  font-size: 1vw;
-  text-align: center; /* Center the text inside the button */
+  font-size: 1rem; 
+  text-align: center; 
 }
 
-/* Responsive CSS */
 @media screen and (max-width: 768px) {
   button {
-    padding: 1.5vw 3vw; /* Adjust padding for smaller screens */
-    margin: 2vw; /* Adjust margin for smaller screens */
-    font-size: 1.5vw; /* Adjust font size for smaller screens */
+      padding: 1rem 1.5rem; 
+      margin: 0.5rem; 
+      font-size: 0.875rem;
   }
 }
 
 @media screen and (max-width: 576px) {
   button {
-    padding: 1vw 2vw; /* Adjust padding for even smaller screens */
-    margin: 1.5vw; /* Adjust margin for even smaller screens */
-    font-size: 1vw; /* Adjust font size for even smaller screens */
+      padding: 0.5rem 1rem; 
+      margin: 0.25rem; 
+      font-size: 0.75rem; 
   }
 }
 
-.signout{
-   border-radius: 1rem;
+.signout {
+  border-radius: 1rem;
 }

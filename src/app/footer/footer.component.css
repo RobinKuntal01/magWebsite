@@ -1,14 +1,35 @@
-.navbar-bottom{
-    color: white;
-    background-color: black;
-}
-.image{
+.image {
     display: flex;
-    justify-content: center; /* Horizontally center the content */
-    align-items: center;
+    justify-content: center;
     margin-bottom: 2rem;
-}
-
-#quicklinks li:hover{
+  }
+  
+  .quick-links .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the content horizontally */
+  }
+  
+  .quick-links .col {
+    flex: 1;
+    margin-right: 1rem; /* Adjust spacing between columns */
+  }
+  
+  .quick-links ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .quick-links li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .quick-links li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .quick-links li:hover a {
     text-decoration: underline;
-}
+  }
+  
