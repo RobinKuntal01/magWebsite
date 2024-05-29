@@ -1,11 +1,13 @@
+import { NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule, NgForm } from '@angular/forms';
+
 @Component({
   selector: 'app-add-magazine',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgIf],
   templateUrl: './add-magazine.component.html',
   styleUrls: [ './add-magazine.component.css']
 })
@@ -15,11 +17,11 @@ export class AddMagazineComponent {
   Image: File | null = null;
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.magazineForm = this.fb.group({
-      title: [''],
-      author: [''],
-      industry: [''],
-      magazinePDF:[''],
-      coverImage: ['']
+      title: ['', Validators.required],
+      author: ['',Validators.required],
+      industry: ['',Validators.required],
+      magazinePDF:['',Validators.required],
+      coverImage: ['',Validators.required]
     });
   }
     onSubmit() {
@@ -48,25 +50,31 @@ export class AddMagazineComponent {
     response => {
       console.log('Server response:', response);
       // Reset the form after successful submission
-      
+      alert('Magazine uploaded successfully!');
       this.PDF = null;
       this.Image = null;
+      this.magazineForm.reset();
+
     },
     error => {
       console.error('Error:', error);
+      alert('There is an Error')
     }
   );
       
-  alert('Magazine uploaded successfully!');
+ 
   }
 }
 onFileSelected(event: any) {
   const selectedFile = event.target.files[0];
   if (event.target.id === 'inputGroupFile01') {
     this.PDF = selectedFile;
+    
   } else if (event.target.id === 'inputGroupFile02') {
     this.Image = selectedFile;
+    
   }
+
 }
 
 

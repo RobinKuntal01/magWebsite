@@ -13,24 +13,39 @@
             <div class="input-group mb-3">
                 <span class="input-group-text">Title</span>
                 <input type="text" class="form-control" id="title" formControlName="title" placeholder="Enter article title" >
+                <div *ngIf="magazineForm.controls.title.invalid && magazineForm.controls.title.touched">
+                  Title is required.
+                </div>
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text">Author</span>
                 <input type="text" class="form-control" id="author" formControlName="author" placeholder="Enter Author Name">
+                <div *ngIf="magazineForm.controls.author.invalid && magazineForm.controls.author.touched">
+                  Author is required.
+                </div>
               </div>
               <select class="form-select mb-3"  formControlName="industry" id="industry" aria-label="Default select example">
                 <option selected>---Select Industry---</option>
                 <option value="Service">Service</option>
                 <option value="Financial">Financial</option>
                 <option value="Manufacturing">Manufacturing</option>
+                <div *ngIf="magazineForm.controls.industry.invalid && magazineForm.controls.industry.touched">
+                  Industry is required.
+                </div>
               </select>
           
           
               <div class="input-group mb-3">
                   <span>Magazine:</span><input type="file" class="form-control" id="inputGroupFile01" name="magazinePDF" (change)="onFileSelected($event)">
+                  <div *ngIf="!PDF && magazineForm.controls.magazinePDF.touched">
+                    PDF is required.
+                  </div>
               </div>
               <div class="input-group mb-3">
                <span>Cover Image:</span> <input type="file" class="form-control" id="inputGroupFile02" name="coverImage" (change)="onFileSelected($event)">
+               <div *ngIf="!Image && magazineForm.controls.coverImage.touched">
+                Cover Image is required.
+              </div>
             </div>
               <div class="d-grid gap-2 col-3" >
                 <button class="btn btn-primary"  type="submit">Submit</button>
