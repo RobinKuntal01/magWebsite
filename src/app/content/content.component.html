@@ -83,15 +83,6 @@
 </div>
 <div class="imgcontainerMag">
   <div class="content-and-sliderMag">
-    <div class="right-sliderMag justify-content-center">
-      <div class="widget-content px-0" *ngIf="latestArticle">
-        <div class="chart d-flex justify-content-center fixed-image-size">
-          <img src="{{latestMagazine?.coverImage}}" 
-               alt="{{latestMagazine?.title}}"
-               class="zoom-imageMag">
-        </div>
-      </div>
-    </div>
     <div class="left-contentMag">
       <h1 style="text-align: center;">Latest Magazines</h1><br>
       <div *ngIf="latestArticle">  
@@ -99,5 +90,15 @@
         <p class="card-text">{{latestMagazine?.content | slice:0:100}}..</p>
       </div>
     </div> 
+    <div class="right-sliderMag justify-content-center">
+      <div class="widget-content px-0" style="width: 100%;" *ngIf="latestArticle">
+        <div class="chart d-flex justify-content-center fixed-image-size">
+          <img src="{{latestMagazine?.coverImage}}" 
+               alt="{{latestMagazine?.title}}"
+               class="zoom-imageMag">
+        </div>
+      </div>
+    </div>
+    
   </div>
 </div><br>

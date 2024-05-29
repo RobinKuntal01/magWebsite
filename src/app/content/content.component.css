@@ -83,6 +83,7 @@
 .left-contentMag {
   padding: 2rem;
   flex: 1;
+  width: 100%;
   text-align: justify;
   background-color: white;
   color: black;
@@ -96,11 +97,11 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 20%;
   height: 200%;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, black 50%);
-  z-index: -1;
-  transition: opacity 1s ease-in-out; /* Transition opacity for smooth appearance */
+  /* z-index: -1;
+  transition: opacity 1s ease-in-out; Transition opacity for smooth appearance */
 }
 
 .left-contentMag:hover::before {
@@ -118,6 +119,7 @@
   align-items: center;
   display: flex;
   flex: 1;
+  width: 20%;
   background-color: rgb(255, 255, 255);
 }
 .zoom-imageMag {
@@ -153,7 +155,7 @@
 .fixed-image-size {
   width: 100%; /* Adjust as needed */
   height: 17rem; /* Fixed height for all images */
-  object-fit: cover;
+  /* object-fit: cover; */
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.756); 
 }
 
