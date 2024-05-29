@@ -321,4 +321,7 @@
     margin: 0 auto;
     max-width: 90%; /* Adjust the max-width as needed */
   }
-  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: black; /* Change icon color to black */
+  }

@@ -1,14 +1,40 @@
-.navbar-bottom{
-    color: white;
-    background-color: black;
-}
-.image{
-    display: flex;
-    justify-content: center; /* Horizontally center the content */
-    align-items: center;
-    margin-bottom: 2rem;
+.image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
-#quicklinks li:hover{
-    text-decoration: underline;
+.quick-links .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.quick-links .col {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.quick-links ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.quick-links li {
+  margin-bottom: 0.5rem;
+}
+
+.quick-links li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.quick-links li:hover a {
+  text-decoration: underline;
+}
+
+.footer .col-md-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
