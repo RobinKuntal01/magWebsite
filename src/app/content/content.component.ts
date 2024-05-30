@@ -1,8 +1,8 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit ,ViewChild,ElementRef} from '@angular/core';
 import { ApiServiceService } from '../services/api-service.service';
 import { HttpClient } from '@angular/common/http';
 import { MagServiceService } from '../services/mag-service.service';
-
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-content',
@@ -14,13 +14,19 @@ export class ContentComponent implements OnInit {
   articleID: any;
   latestArticle: any;
   magazines:any[]=[];
-  magazineId:any;
+  magazineID:any;
   latestMagazine:any;
+  readMagazine: any;
+  pdfUrl = '';
+  title:any
   constructor(
     private apiServices: ApiServiceService,
-    private magservice: MagServiceService,
-    private http: HttpClient
+    private magService: MagServiceService,
+    private http: HttpClient,
+    private modalservice: NgbModal,
   ) {}
+
+  @ViewChild('content') popupview!: ElementRef;
 
   ngOnInit(): void {
     this.apiServices.getArticles().subscribe((data: any) => {
@@ -30,7 +36,7 @@ export class ContentComponent implements OnInit {
         this.latestArticle = this.articles[this.articles.length - 1];
       }
     });
-    this.magservice.getMagazines().subscribe((data: any) => {
+    this.magService.getMagazines().subscribe((data: any) => {
       this.magazines = data.allMagazine;
   console.log(this.magazines)
       if(this.magazines.length > 0){
@@ -38,6 +44,16 @@ export class ContentComponent implements OnInit {
       }
     });
   }
-
+  readMore(magazineID: number) {
+    this.magService.getMagazineById(magazineID).subscribe((data: any) => {
+      this.readMagazine = data.readMoreMagazine
+      this.title = this.readMagazine.title
+      this.magazineID = magazineID
+      let url = this.readMagazine.magazinePDF
+      this.pdfUrl = url
+      console.log(this.pdfUrl);
+      this.modalservice.open(this.popupview, { size: 'lg' })
+    });
+  }
   
 }
