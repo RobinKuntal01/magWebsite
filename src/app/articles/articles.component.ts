@@ -50,10 +50,17 @@ export class ArticlesComponent implements OnInit {
   }
 
   deleteArticle(articleID: string) {
-    return this.apiServices.destroyArticle(articleID).subscribe((data: any) => {
-      this.ngOnInit();
-      console.log(articleID);
-    });
-    alert('Article deleted successfully!');
+    this.apiServices.destroyArticle(articleID).subscribe(
+      (data: any) => {
+        this.ngOnInit();
+        console.log(articleID);
+        alert('Article deleted successfully!');
+      },
+      (error: any) => {
+        console.error('Error deleting article', error);
+        alert('Failed to delete the article.');
+      }
+    );
   }
+  
 }

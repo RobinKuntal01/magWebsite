@@ -15,9 +15,7 @@
           <div class="carousel-caption d-none ">
             <h5>"{{a.title}}"</h5>
           </div>
-          <div class="carousel-caption d-none d-md-block">
-            <h5>{{a.title}}</h5>
-          </div>
+          
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -47,6 +45,7 @@
       <div *ngIf="latestArticle">  
         <h5>"{{latestArticle?.title}}"</h5>
         <p class="card-text">{{latestArticle?.content | slice:0:100}}..</p>
+        <button class="btn btn-primary center-align" target="_blank" (click)="readMoreArticle(latestArticle?._id)">Read More</button>
       </div>
     </div>   
     <div class="right-slider justify-content-center">
@@ -73,7 +72,7 @@
             <div class="image-wrapper">
               <img src="{{a.coverImage}}" alt="{{a.title}}" class="img-fluid fixed-image-size zoom-image">
               <div class="read-more-wrapper">
-                <button class="btn read-more-button" (click)="readMore(a._id)">Read More</button>
+                <button class="btn read-more-button" (click)="readMoreMagazine(a._id)">Read More</button>
 
                 <!-- <a href="{{a.pdfArticle}}" target="_blank" c>Read More</a> -->
               </div>
@@ -88,10 +87,11 @@
   <div class="content-and-slider">
     <div class="left-content">
       <h1 style="text-align: center;">Latest Magazines</h1><br>
-      <div *ngIf="latestMagazine">  
+       <div *ngIf="latestMagazine">  
         <h5>"{{latestMagazine?.title}}"</h5>
         <p class="card-text">{{latestMagazine?.content | slice:0:100}}..</p>
-      </div>
+        <button class="btn read-more-button" style="background-color: black; color: white;" (click)="readMoreMagazine(latestMagazine?._id)">Read More</button>
+       </div>
     </div>   
     <div class="right-slider justify-content-center">
       <div class="widget-content px-0" *ngIf="latestMagazine">

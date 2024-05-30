@@ -3,7 +3,7 @@ import { ApiServiceService } from '../services/api-service.service';
 import { HttpClient } from '@angular/common/http';
 import { MagServiceService } from '../services/mag-service.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
@@ -18,12 +18,14 @@ export class ContentComponent implements OnInit {
   latestMagazine:any;
   readMagazine: any;
   pdfUrl = '';
-  title:any
+  title:any;
+  readArticle:any;
   constructor(
     private apiServices: ApiServiceService,
     private magService: MagServiceService,
     private http: HttpClient,
     private modalservice: NgbModal,
+    private router :Router,
   ) {}
 
   @ViewChild('content') popupview!: ElementRef;
@@ -44,7 +46,7 @@ export class ContentComponent implements OnInit {
       }
     });
   }
-  readMore(magazineID: number) {
+  readMoreMagazine(magazineID: number) {
     this.magService.getMagazineById(magazineID).subscribe((data: any) => {
       this.readMagazine = data.readMoreMagazine
       this.title = this.readMagazine.title
@@ -55,5 +57,11 @@ export class ContentComponent implements OnInit {
       this.modalservice.open(this.popupview, { size: 'lg' })
     });
   }
-  
+  readMoreArticle(articleID: string) {
+    this.apiServices.getArticleById(articleID).subscribe((data: any) => {
+      this.readArticle = data.readMoreArticle;
+      console.log(articleID);
+      this.router.navigate(['/readmore', articleID]);
+    });
+  }
 }

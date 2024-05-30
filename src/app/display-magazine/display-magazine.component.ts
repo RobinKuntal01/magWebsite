@@ -66,12 +66,15 @@ export class DisplayMagazineComponent implements OnInit {
       this.modalservice.open(this.popupview, { size: 'lg' })
     });
   }
-
   deleteMagazine(magazineID: number) {
     return this.magService.destroyMagazine(magazineID).subscribe((data: any) => {
       this.ngOnInit();
       console.log(magazineID);
-    });
-    alert('Article deleted successfully!');
-  }
-}
+      alert('Magazine deleted successfully!');
+    },
+    (error: any) => {
+      console.error('Error deleting article', error);
+      alert('Failed to delete the article.');
+    }
+  );
+}}
