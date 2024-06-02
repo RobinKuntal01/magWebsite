@@ -33,11 +33,14 @@
  } 
 .nav-item {
     border-radius: 2rem;
+    font-size: larger;
   }
 .nav-item.active {
     background-color: black; /* Black color for active item */
   }
-  
+  .navbar-toggler{
+    background-color: black;
+  }
   .nav-item.active a.nav-link {
     background-color: black;
     color: white; /* White color for text of active item */

@@ -3,7 +3,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-top bg-body-tertiary"  (scroll)="onscroll()" [ngClass]="navbarfixed?'fixed':'nofixed'">
     <div class="container-fluid ">
       <a class="navbar-brand" href="#">
-        <img src="assets/logobgR.jpg" alt="logo" width="280rem" height="40rem">
+        <img src="assets/logobgR.jpg" alt="logo" width="280rem" height="45rem">
       </a>
     <span class="space"></span>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleMenu()">
@@ -23,8 +23,8 @@
         <!-- <li class="nav-item" (click)="setActive('industry')" [class.active]="activeTab === 'industry'">
           <a class="nav-link btn"  [routerLink]="['/industry']">Industry</a>
         </li> -->
-        <li class="nav-item" (click)="setActive('contactus')" [class.active]="activeTab === 'contactus'">
-          <a class="nav-link btn"  [routerLink]="['/contactus']">Contact Us</a>
+        <li class="nav-item" (click)="setActive('contactus')" [class.active]="activeTab === 'womens'">
+          <a class="nav-link btn"  href="https://www.digitalbusinessreview.com/" target="_blank">Womens</a>
         </li>
         <li class="nav-item" (click)="setActive('aboutus')" [class.active]="activeTab === 'aboutus'">
           <a class="nav-link btn"  [routerLink]="['/aboutus']">About Us</a>
@@ -39,7 +39,7 @@
           <li class="nav-item" *ngIf="isLoggedIn()" [class.active]="activeTab === 'admin'" (click)="setActive('admin')">
             <a class="nav-link btn" routerLink="/dashboard">Admin</a>
           </li>
-          
+         
        
       </ul>
       
@@ -64,7 +64,7 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <!-- Your menu items here -->
           </ul>
-          <div class="Smedia">
+          <!-- <div class="Smedia">
             <a class="navbar-brand" href="https://www.facebook.com/" target="_blank">
               <img src="assets/facebook-icon.svg" alt="Bootstrap" width="30" height="27">
             </a>
@@ -77,7 +77,7 @@
             <a class="navbar-brand" href="https://in.linkedin.com/" target="_blank">
               <img src="assets/icons8-linkedin.svg" alt="Bootstrap" width="30" height="27">
             </a>
-          </div>
+          </div> -->
         </div>
       </div>
     </nav>
