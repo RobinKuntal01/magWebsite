@@ -134,8 +134,8 @@ const readMore = asyncHandler(async (req, res) => {
   const id = (req.params.magazineID)
   console.log(id);
   
-  const readMoreMagazine = await Magazine.findById({ _id:id })
-    res.status(200).json({readMoreMagazine})
+  // const readMoreMagazine = await Magazine.findById({ _id:id })
+  //   res.status(200).json({readMoreMagazine})
 })
 export { uploadMagazine };
 export {getAllMagazine};

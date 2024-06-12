@@ -20,6 +20,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { AddMagazineComponent } from './add-magazine/add-magazine.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +47,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     CommonModule,
     NgxExtendedPdfViewerModule,
     MatPaginatorModule,
+    AddMagazineComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

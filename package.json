@@ -3,7 +3,7 @@
     "@angular-devkit/schematics": "^17.3.7",
     "@angular/animations": "^16.2.12",
     "@angular/cdk": "^16.2.12",
-    "@angular/cli": "^18.0.1",
+    "@angular/cli": "^18.0.3",
     "@angular/common": "^16.2.12",
     "@angular/core": "^16.2.12",
     "@angular/forms": "^16.2.12",
