@@ -1,56 +1,47 @@
 <div class="imgcontainer">
   <div class="content-and-slider">
     <div class="left-content">
-      <img src="assets/upload.png" alt="Notebook" style="width:80%; height:100%;">
-    </div>
-    <div class="right-slider">
-      <div class="container mt-5 col-5">
-        <form [formGroup]="magazineForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <img src="assets/upload.png" alt="Notebook" style="width:80%; height:100%;">
+  
+</div>
+
+<div class="right-slider"> 
+
+  <div class="container mt-5 col-5">
+      <form [formGroup]="magazineForm" #uploadForm (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+
           <div class="input-group mb-3">
-            <span class="input-group-text">Title</span>
-            <input type="text" class="form-control" id="title" formControlName="title" placeholder="Enter article title">
-            <div *ngIf="magazineForm.get('title')?.invalid && magazineForm.get('title')?.touched" class="text-danger">
-              Title is required.
+              <span class="input-group-text">Title</span>
+              <input type="text" class="form-control" id="title" formControlName="title" placeholder="Enter article title" >
             </div>
-          </div>
-          <div class="input-group mb-3">
-            <span class="input-group-text">Author</span>
-            <input type="text" class="form-control" id="author" formControlName="author" placeholder="Enter Author Name">
-            <div *ngIf="magazineForm.get('author')?.invalid && magazineForm.get('author')?.touched" class="text-danger">
-              Author is required.
+            <div class="input-group mb-3">
+              <span class="input-group-text">Author</span>
+              <input type="text" class="form-control" id="author" formControlName="author" placeholder="Enter Author Name">
             </div>
-          </div>
-          <div class="input-group mb-3">
-            <span class="input-group-text">Industry</span>
-            <select class="form-select" formControlName="industry" id="industry" aria-label="Default select example">
-              <option value="" disabled selected>---Select Industry---</option>
+            <select class="form-select mb-3"  formControlName="industry" id="industry" aria-label="Default select example">
+              <option selected>---Select Industry---</option>
               <option value="Service">Service</option>
               <option value="Financial">Financial</option>
               <option value="Manufacturing">Manufacturing</option>
             </select>
-            <div *ngIf="magazineForm.get('industry')?.invalid && magazineForm.get('industry')?.touched" class="text-danger">
-              Industry is required.
+        
+        
+            <div class="input-group mb-3">
+                <span>Magazine:</span><input type="file" class="form-control" id="inputGroupFile01" name="magazinePDF" (change)="onFileSelected($event)"  accept=".pdf">
             </div>
+            <div class="input-group mb-3">
+             <span>Cover Image:</span> <input type="file" class="form-control" id="inputGroupFile02" name="coverImage" (change)="onFileSelected($event)">
           </div>
-          <div class="input-group mb-3">
-            <span class="input-group-text">Magazine:</span>
-            <input type="file" class="form-control" id="inputGroupFile01" (change)="onFileSelected($event)">
-            <div *ngIf="!PDF && magazineForm.get('magazinePDF')?.touched" class="text-danger">
-              PDF is required.
+            <div class="d-grid gap-2 col-3" >
+              <button class="btn btn-primary"  type="submit">Submit</button>
             </div>
-          </div>
-          <div class="input-group mb-3">
-            <span class="input-group-text">Cover Image:</span>
-            <input type="file" class="form-control" id="inputGroupFile02" (change)="onFileSelected($event)">
-            <div *ngIf="!Image && magazineForm.get('coverImage')?.touched" class="text-danger">
-              Cover Image is required.
-            </div>
-          </div>
-          <div class="d-grid gap-2 col-3">
-            <button class="btn btn-primary" type="submit">Submit</button>
-          </div>
-        </form>
-      </div>
-    </div>
+      
+    
+               
+    </form> 
   </div>
+  
+
+</div>
+</div>
 </div>
